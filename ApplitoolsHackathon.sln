@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplitoolsHackathonTraditional", "ApplitoolsHackathonTraditional\ApplitoolsHackathonTraditional.csproj", "{F3973CA5-61DE-4095-94E2-2D18A602BB8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplitoolsHackathonVisionAi", "ApplitoolsHackathonVisionAi\ApplitoolsHackathonVisionAi.csproj", "{00F702B8-53BA-45F8-A11B-3F9DE557845F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3973CA5-61DE-4095-94E2-2D18A602BB8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3973CA5-61DE-4095-94E2-2D18A602BB8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3973CA5-61DE-4095-94E2-2D18A602BB8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3973CA5-61DE-4095-94E2-2D18A602BB8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00F702B8-53BA-45F8-A11B-3F9DE557845F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00F702B8-53BA-45F8-A11B-3F9DE557845F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00F702B8-53BA-45F8-A11B-3F9DE557845F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00F702B8-53BA-45F8-A11B-3F9DE557845F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F337FAC-E9E5-4477-8271-5F3BCD8C7012}
+	EndGlobalSection
+EndGlobal
