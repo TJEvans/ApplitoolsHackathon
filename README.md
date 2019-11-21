@@ -1,12 +1,11 @@
 # ApplitoolsHackathon
 Applitools Visual AI Rockstar Hackathon
 
-These Projects were build on Visual Studio 2019 and require dotnet core 3.0 sdk installed and chrome updated
+These Projects were build on Visual Studio 2019 and require dotnet core 3.0 sdk installed and chrome updated.
 
-Can be run in Visual Studio using the build in Test Explorer or using the following commands.
-```
+Your APPLITOOLS_API_KEY Environment Variable MUST be set when executing the ApplitooslHackathonVisionAi Tests
 
-```
+Can be run in Visual Studio using the build in Test Explorer or using dotnet test from each project directory.
 
 ## Tests the Traditional Way
 Time it took to develop the traditional test project? 360 minutes
