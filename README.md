@@ -16,9 +16,7 @@ Lines changed when adjusting to V2 TODO
 
 Number of Locators Used was Fourteen
 
-Number of field labels or test displayed in the app I need to copy? Seven
-    Three for the error strings
-    Four for populating xPaths
+Number of field labels or test displayed in the app I need to copy? Seven, Three for the error strings & Four for populating xPaths
 
 
 ## Tests using Vision AI
