@@ -20,15 +20,17 @@ namespace ApplitoolsHackathonVisionAi.pageobjects
         private const string TransactionTableStatusHeaderLocator = "th#status";
         private const string TransactionTableDateHeaderLocator = "th#date";
         private const string TransactionTableDescriptionHeaderLocator = "th#description";
+        private const string CompareExpensesLinkLocator = "a#showExpensesChart";
         public static By TransactionTableCategoryHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableCategoryHeaderLocator}");
         public static By TransactionTableAmountHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableAmountHeaderLocator}");
         public static By TransactionTableStatusHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableStatusHeaderLocator}");
         public static By TransactionTableDateHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableDateHeaderLocator}");
         public static By TransactionTableDescriptionHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableDescriptionHeaderLocator}");
         public static By TransactionTableRow = By.CssSelector($"{TransactionTableLocator} > tbody > tr");
+        public static By CompareExpensesLink = By.CssSelector(CompareExpensesLinkLocator);
         public static By GetTransactionTableRow(int index) => By.CssSelector($"{TransactionTableLocator} > tbody > tr:nth-child({index + 1}");
         public static By GetTransactionTableRowCell(int rowIndex, int colIndex) => By.CssSelector($"{TransactionTableLocator} > tbody > tr:nth-child({rowIndex + 1}) > td:nth-child({colIndex + 1})");
-
+        
         private const string AdLocator = "div[id*=\"flashSale\"] > img[src*=\"gif\"]";
         public static By Ad = By.CssSelector(AdLocator);
 
@@ -61,8 +63,19 @@ namespace ApplitoolsHackathonVisionAi.pageobjects
                 browser.FindElement(TransactionTableDescriptionHeader);
                 browser.FindElement(TransactionTableStatusHeader);
                 browser.FindElement(TransactionTableDateHeader);
+                browser.FindElement(CompareExpensesLink);
                 return true;
             });
+        }
+
+        /// <summary>
+        /// Click the Compare Expenses Button on the Page
+        /// </summary>
+        /// <returns>The Chart page object</returns>
+        public ChartPage ClickCompareExpenses()
+        {
+            _but.FindElement(CompareExpensesLink).Click();
+            return new ChartPage(_but);
         }
 
         /// <summary>

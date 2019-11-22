@@ -36,6 +36,7 @@ namespace ApplitoolsHackathonTraditional.testcases
         }
 
         [Test]
+        [Explicit]
         public void TransactionsChartTest()
         {
             //TODO

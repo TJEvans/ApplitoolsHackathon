@@ -44,7 +44,7 @@ namespace ApplitoolsHackathonVisionAi.testcases
             Eyes.SaveNewTests = true;
 
             //Open AppliTool's Eyes and start a test based on the method name
-            Eyes.Open(But, "Hackathon App", TestContext.CurrentContext.Test.MethodName, new Size(1440,900));
+            Eyes.Open(But, "AppliToolsHackathon", TestContext.CurrentContext.Test.MethodName, new Size(1440,900));
 
             //Utilize the Batching Feature to group tests by their Class
             Eyes.Batch.Name = TestContext.CurrentContext.Test.ClassName;

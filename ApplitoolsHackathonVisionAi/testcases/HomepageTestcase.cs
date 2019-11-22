@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using ApplitoolsHackathonVisionAi.pageobjects;
 using NUnit.Framework;
 
@@ -22,7 +23,6 @@ namespace ApplitoolsHackathonVisionAi.testcases
         public void RecentTransactionsAmountSorting()
         {
             var homePage = new LoginPage(But).Login("jgomez", "password");
-            Eyes.CheckWindow("jgomez homepage");
             var tableData = homePage.GetRecentTransactions();
             homePage.SortRecentTransactionsByAmount();
             var sortedTableData = homePage.GetRecentTransactions();
@@ -34,17 +34,30 @@ namespace ApplitoolsHackathonVisionAi.testcases
                 tempAmount = transaction.amount;
             }
             Assert.True(true, "Recent Transactions Table is sorted ascending by amount");
+
+            //For the raw data validation of sorting I would maintain the existing verification, but there may be other elements of the UI Visual validation may be useful for
             Eyes.CheckElement(HomePage.TransactionTable, "jgomez homepage transactions sorted by amount");
         }
 
+        /// <summary>
+        /// Login and Navigate to the Expenses Chart.  Verify the look and feel of the chart then add more data and verify again.
+        /// NOTE: This element is a Canvas so we cannot verify it directly, instead rely on AppliTools VisualAI comparison to check the Chart between runs
+        /// </summary>
         [Test]
         public void TransactionsChartTest()
         {
-            //TODO
-            //Need to find an alternate solution to run this test as its data and functionality is buried in the Canvas element
-            //We could utilize the JavascriptExecutor to read/interact with the Chart but this requires intimate application knowledge
-            //We could request developers add a query param to the application that allows the canvas to render as SVGs, this support is built into some framework
-            //We could pursue a Visual Testing application to compare the Look of the chart, this technology has come a long way since Sikuli, and I look forward to trying AppliTools Eyes
+            var homePage = new LoginPage(But).Login("jgomez", "password");
+            
+            //Open Expenses Chart Page
+            var chartPage = homePage.ClickCompareExpenses();
+
+            //Visually compare the Expense Chart, this is great solution to validating canvas's when you control the test data
+            Eyes.CheckElement(ChartPage.chartCanvas, "Default Expense Chart");
+            
+            chartPage.AddAnotherYearOfData();
+            
+            //Visually compare the Expense Chart, this is great solution to validating canvas's when you control the test data
+            Eyes.CheckElement(ChartPage.chartCanvas, "Expense Chart with 2019 Data");
         }
 
         /// <summary>
@@ -55,6 +68,9 @@ namespace ApplitoolsHackathonVisionAi.testcases
         {
             var homePage = LoginPage.NavigateToPage(But, true).Login("jgomez", "password");
             Assert.AreEqual(2, homePage.GetNumberOfAds(), "Verify Two Flash Sales are displayed when enabled");
+
+            //If our goal is to validate only the existence of two Gif Ads the above validation is recommended
+            //Adding Visual checks though allow us to confirm there are no unintended consequences in other portions of the UI when enabling Ads
             Eyes.CheckWindow("Homepage with Ads");
         }
     }
