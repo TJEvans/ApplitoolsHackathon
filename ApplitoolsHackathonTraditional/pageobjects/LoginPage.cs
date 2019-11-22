@@ -4,6 +4,9 @@ using OpenQA.Selenium.Support.UI;
 
 namespace ApplitoolsHackathonTraditional.pageobjects
 {
+    /// <summary>
+    /// Object representing the applications login page allowing for common user interactions
+    /// </summary>
     public class LoginPage : WebPage
     {
         public static readonly By AlertMessage = By.CssSelector("div.alert-warning");

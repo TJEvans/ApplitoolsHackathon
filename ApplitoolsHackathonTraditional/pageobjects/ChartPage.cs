@@ -2,9 +2,8 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace ApplitoolsHackathonVisionAi.pageobjects
+namespace ApplitoolsHackathonTraditional.pageobjects
 {
-
     /// <summary>
     /// Object representing the applications chart page allowing for common user interactions
     /// </summary>
@@ -26,6 +25,9 @@ namespace ApplitoolsHackathonVisionAi.pageobjects
             });
         }
 
+        /// <summary>
+        /// Click the Show data for the Next Year button
+        /// </summary>
         public void AddAnotherYearOfData()
         {
             _but.FindElement(addAnotherYearsDataButton).Click();
