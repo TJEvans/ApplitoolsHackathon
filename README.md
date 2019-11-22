@@ -10,7 +10,7 @@ Can be run in Visual Studio using the build in Test Explorer or using dotnet tes
 ## Tests the Traditional Way
 Time it took to develop the traditional test project? 360 minutes
 
-Lines of code written ~446
+Lines of code written ~497
 
 Lines changed when adjusting to V2 TODO
 
@@ -22,9 +22,9 @@ Number of field labels or test displayed in the app I need to copy? Seven, Three
 ## Tests using Vision AI
 Time it took to learn AppliTools? Scanned the Tutorial for 30 minutes for the basics then dove right in
 
-Time it took to develop the VisionAi test project?  Took an hour to get Eyes added and work through API key and Viewport params.  Interacting with the UI took .....
+Time it took to develop the VisionAi test project?  Took an hour to get Eyes added and work through API key and Viewport params.  Interacting with the Eyes UI took a half day to get comfortable going in blind.  Figuring out how to remove Baselines and update them gave me a lot of trouble.
 
-Lines of code written? ~50 lines of code was added to utilize AppliTools Eyes
+Lines of code written? ~60 lines of code was added to utilize AppliTools Eyes
 
 Lines changed when adjusting to V2 TODO
 
