@@ -26,25 +26,10 @@ namespace ApplitoolsHackathonTraditional.pageobjects
         private static By TransactionTableDateHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableDateHeaderLocator}");
         private static By TransactionTableDescriptionHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableDescriptionHeaderLocator}");
         private static By TransactionTableRow = By.CssSelector($"{TransactionTableLocator} > tbody > tr");
-        private static By GetTransactionTableRow(int index) => By.CssSelector($"{TransactionTableLocator} > tbody > tr:nth-child({index + 1}");
         private static By GetTransactionTableRowCell(int rowIndex, int colIndex) => By.CssSelector($"{TransactionTableLocator} > tbody > tr:nth-child({rowIndex + 1}) > td:nth-child({colIndex + 1})");
 
         private const string AdLocator = "div[id*=\"flashSale\"] > img[src*=\"gif\"]";
         private static By Ad = By.CssSelector(AdLocator);
-
-        /// <summary>
-        /// Navigate the Browser to the Applications Homepage
-        /// </summary>
-        /// <param name="driver">The WebDriver instance to do the navigation</param>
-        /// <param name="enableAds">True to enable Ads on the client</param>
-        /// <returns>A Page Object representing the page displayed after a successful navigation</returns>
-        public static HomePage NavigateToPage(IWebDriver driver, bool enableAds = false)
-        {
-            var sUrl = "https://demo.applitools.com/hackathonApp.html" ;
-            if (enableAds) sUrl += "?showAd=true";
-            driver.Url = sUrl;
-            return new HomePage(driver);
-        }
 
         /// <summary>
         /// 

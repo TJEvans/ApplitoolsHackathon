@@ -89,17 +89,6 @@ namespace ApplitoolsHackathonTraditional.pageobjects
         }
 
         /// <summary>
-        /// Click on the Remember Me checkbox
-        /// </summary>
-        /// <param name="enabled">The desired state of the Remember Me checkbox</param>
-        public void SetRememberMe(bool enabled)
-        {
-            if (_but.FindElement(RememberMeCheckBox).GetAttribute("checked")
-                .Equals(enabled.ToString(), StringComparison.OrdinalIgnoreCase)) return;
-            _but.FindElement(RememberMeCheckBox).Click();
-        }
-
-        /// <summary>
         /// Determines whether a warning message is displayed to the user
         /// </summary>
         /// <returns>True if a warning is displayed on the page</returns>
