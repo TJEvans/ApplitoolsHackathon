@@ -12,6 +12,8 @@ namespace ApplitoolsHackathonVisionAi.testcases
     [TestFixture]
     public class HackathonTestcase
     {
+        public const string BaseUrl = "https://demo.applitools.com/hackathonV2.html";
+
         /// <summary>
         ///     The Browser Under Test
         /// </summary>
@@ -51,7 +53,7 @@ namespace ApplitoolsHackathonVisionAi.testcases
             Eyes.Batch.Name = TestContext.CurrentContext.Test.ClassName;
 
             // Navigate to the end desired Url
-            But.Url = "https://demo.applitools.com/hackathonV2.html";
+            But.Url = BaseUrl;
         }
 
         /// <summary>

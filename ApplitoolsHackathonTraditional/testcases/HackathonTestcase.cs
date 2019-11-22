@@ -9,6 +9,8 @@ namespace ApplitoolsHackathonTraditional.testcases
     [TestFixture]
     public class HackathonTestcase
     {
+        public const string BaseUrl = "https://demo.applitools.com/hackathonV2.html";
+
         /// <summary>
         ///     The Browser Under Test
         /// </summary>
@@ -25,7 +27,7 @@ namespace ApplitoolsHackathonTraditional.testcases
             var options = new ChromeOptions();
             options.AddLocalStatePreference("download.prompt_for_download", false);
             But = new ChromeDriver(options);
-            But.Url = "https://demo.applitools.com/hackathonV2.html";
+            But.Url = BaseUrl;
         }
 
         /// <summary>

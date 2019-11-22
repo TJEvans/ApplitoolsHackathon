@@ -1,4 +1,5 @@
 ﻿using System;
+using ApplitoolsHackathonVisionAi.testcases;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -13,7 +14,7 @@ namespace ApplitoolsHackathonVisionAi.pageobjects
 
         //The biggest advantage xPath has over css is inner text locators, but it makes globalization much harder
         public static readonly By UsernameField = By.XPath("//label[.='Username']/../input");
-        public static readonly By PasswordField = By.XPath("//label[.='Password']/../input");
+        public static readonly By PasswordField = By.XPath("//label[.='Pwd']/../input");
         public static readonly By LoginButton = By.XPath("//button[.='Log In']");
         public static readonly By RememberMeCheckBox = By.XPath("//label[.='Remember Me']/input");
 
@@ -25,7 +26,7 @@ namespace ApplitoolsHackathonVisionAi.pageobjects
         /// <returns>Object representing the Login Page on successful navigation</returns>
         public static LoginPage NavigateToPage(IWebDriver driver, bool enableAds = false)
         {
-            var sUrl = "https://demo.applitools.com/hackathon.html";
+            var sUrl = HackathonTestcase.BaseUrl;
             if (enableAds) sUrl += "?showAd=true";
             driver.Url = sUrl;
             return new LoginPage(driver);

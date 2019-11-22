@@ -31,21 +31,7 @@ namespace ApplitoolsHackathonTraditional.pageobjects
 
         private const string AdLocator = "div[id*=\"flashSale\"] > img[src*=\"gif\"]";
         private static By Ad = By.CssSelector(AdLocator);
-
-        /// <summary>
-        /// Navigate the Browser to the Applications Homepage
-        /// </summary>
-        /// <param name="driver">The WebDriver instance to do the navigation</param>
-        /// <param name="enableAds">True to enable Ads on the client</param>
-        /// <returns>A Page Object representing the page displayed after a successful navigation</returns>
-        public static HomePage NavigateToPage(IWebDriver driver, bool enableAds = false)
-        {
-            var sUrl = "https://demo.applitools.com/hackathonApp.html" ;
-            if (enableAds) sUrl += "?showAd=true";
-            driver.Url = sUrl;
-            return new HomePage(driver);
-        }
-
+        
         /// <summary>
         /// 
         /// </summary>
