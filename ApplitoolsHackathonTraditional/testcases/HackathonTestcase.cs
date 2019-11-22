@@ -25,7 +25,7 @@ namespace ApplitoolsHackathonTraditional.testcases
             var options = new ChromeOptions();
             options.AddLocalStatePreference("download.prompt_for_download", false);
             But = new ChromeDriver(options);
-            But.Url = "https://demo.applitools.com/hackathon.html";
+            But.Url = "https://demo.applitools.com/hackathonV2.html";
         }
 
         /// <summary>
