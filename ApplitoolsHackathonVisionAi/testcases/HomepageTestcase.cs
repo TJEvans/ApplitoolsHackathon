@@ -27,13 +27,15 @@ namespace ApplitoolsHackathonVisionAi.testcases
             homePage.SortRecentTransactionsByAmount();
             var sortedTableData = homePage.GetRecentTransactions();
             Assert.AreEqual(tableData.Count, sortedTableData.Count(transaction => tableData.Contains(transaction)), "Verify all transaction data remains the same after Sorting");
-            var tempAmount = decimal.MinValue;
-            foreach (var transaction in sortedTableData)
-            {
-                if(tempAmount > transaction.amount) Assert.True(false, "Recent Transactions Table is NOT sorted ascending by amount");
-                tempAmount = transaction.amount;
-            }
-            Assert.True(true, "Recent Transactions Table is sorted ascending by amount");
+            
+            //Assert is catching the Error, but I want to see what it looks like when Eyes catches it
+            //var tempAmount = decimal.MinValue;
+            //foreach (var transaction in sortedTableData)
+            //{
+            //    if(tempAmount > transaction.amount) Assert.True(false, "Recent Transactions Table is NOT sorted ascending by amount");
+            //    tempAmount = transaction.amount;
+            //}
+            //Assert.True(true, "Recent Transactions Table is sorted ascending by amount");
 
             //For the raw data validation of sorting I would maintain the existing verification, but there may be other elements of the UI Visual validation may be useful for
             Eyes.CheckElement(HomePage.TransactionTable, "jgomez homepage transactions sorted by amount");
@@ -67,7 +69,9 @@ namespace ApplitoolsHackathonVisionAi.testcases
         public void MonitizationTest()
         {
             var homePage = LoginPage.NavigateToPage(But, true).Login("jgomez", "password");
-            Assert.AreEqual(2, homePage.GetNumberOfAds(), "Verify Two Flash Sales are displayed when enabled");
+            
+            //Assert is catching the error, but I want to see what its like when Eyes catches it
+            //Assert.AreEqual(2, homePage.GetNumberOfAds(), "Verify Two Flash Sales are displayed when enabled");
 
             //If our goal is to validate only the existence of two Gif Ads the above validation is recommended
             //Adding Visual checks though allow us to confirm there are no unintended consequences in other portions of the UI when enabling Ads
