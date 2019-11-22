@@ -8,7 +8,9 @@ namespace ApplitoolsHackathonTraditional.pageobjects
     {
         public static readonly By AlertMessage = By.CssSelector("div.alert-warning");
 
-        //The biggest advantage xPath has over css is inner text locators, but it makes globalization much harder
+        //The biggest advantage xPath has over css is inner text locators
+        //This allows me to verify the Label text inherently by calling findElement
+        //But it makes globalization test much harder
         public static readonly By UsernameField = By.XPath("//label[.='Username']/../input");
         public static readonly By PasswordField = By.XPath("//label[.='Password']/../input");
         public static readonly By LoginButton = By.XPath("//button[.='Log In']");

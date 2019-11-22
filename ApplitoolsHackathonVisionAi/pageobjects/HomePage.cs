@@ -13,24 +13,24 @@ namespace ApplitoolsHackathonVisionAi.pageobjects
     public class HomePage : WebPage
     {
         private const string TransactionTableLocator = "table#transactionsTable";
-        private static By TransactionTable = By.CssSelector(TransactionTableLocator);
+        public static By TransactionTable = By.CssSelector(TransactionTableLocator);
 
         private const string TransactionTableCategoryHeaderLocator = "th#category";
         private const string TransactionTableAmountHeaderLocator = "th#amount";
         private const string TransactionTableStatusHeaderLocator = "th#status";
         private const string TransactionTableDateHeaderLocator = "th#date";
         private const string TransactionTableDescriptionHeaderLocator = "th#description";
-        private static By TransactionTableCategoryHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableCategoryHeaderLocator}");
-        private static By TransactionTableAmountHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableAmountHeaderLocator}");
-        private static By TransactionTableStatusHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableStatusHeaderLocator}");
-        private static By TransactionTableDateHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableDateHeaderLocator}");
-        private static By TransactionTableDescriptionHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableDescriptionHeaderLocator}");
-        private static By TransactionTableRow = By.CssSelector($"{TransactionTableLocator} > tbody > tr");
-        private static By GetTransactionTableRow(int index) => By.CssSelector($"{TransactionTableLocator} > tbody > tr:nth-child({index + 1}");
-        private static By GetTransactionTableRowCell(int rowIndex, int colIndex) => By.CssSelector($"{TransactionTableLocator} > tbody > tr:nth-child({rowIndex + 1}) > td:nth-child({colIndex + 1})");
+        public static By TransactionTableCategoryHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableCategoryHeaderLocator}");
+        public static By TransactionTableAmountHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableAmountHeaderLocator}");
+        public static By TransactionTableStatusHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableStatusHeaderLocator}");
+        public static By TransactionTableDateHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableDateHeaderLocator}");
+        public static By TransactionTableDescriptionHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableDescriptionHeaderLocator}");
+        public static By TransactionTableRow = By.CssSelector($"{TransactionTableLocator} > tbody > tr");
+        public static By GetTransactionTableRow(int index) => By.CssSelector($"{TransactionTableLocator} > tbody > tr:nth-child({index + 1}");
+        public static By GetTransactionTableRowCell(int rowIndex, int colIndex) => By.CssSelector($"{TransactionTableLocator} > tbody > tr:nth-child({rowIndex + 1}) > td:nth-child({colIndex + 1})");
 
         private const string AdLocator = "div[id*=\"flashSale\"] > img[src*=\"gif\"]";
-        private static By Ad = By.CssSelector(AdLocator);
+        public static By Ad = By.CssSelector(AdLocator);
 
         /// <summary>
         /// Navigate the Browser to the Applications Homepage

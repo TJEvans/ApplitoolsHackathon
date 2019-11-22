@@ -11,6 +11,10 @@
         public string status;
         public string transactionDateTime;
 
+        /// <summary>
+        /// Custom Hash Code method in order to use default comparators
+        /// </summary>
+        /// <returns>a hashcode</returns>
         public override int GetHashCode()
         {
             var hashCode = 352033288;
@@ -22,6 +26,11 @@
             return hashCode;
         }
 
+        /// <summary>
+        /// Custom Equals method in order to use the default comparators
+        /// </summary>
+        /// <param name="obj">The object to compare to</param>
+        /// <returns>True if the provided Transaction is equal to this one, otherwise false</returns>
         public override bool Equals(object obj)
         {
             if (obj == null || obj.GetType() != typeof(Transaction))

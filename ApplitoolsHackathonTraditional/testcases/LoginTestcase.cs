@@ -7,6 +7,7 @@ namespace ApplitoolsHackathonTraditional.testcases
     /// <summary>
     /// Execute the user workflows described in https://applitools.com/hackathon-instructions#login-page & https://applitools.com/hackathon-instructions#data-driven-test
     /// </summary>
+    [TestFixture]
     public class LoginTestcase : HackathonTestcase
     {
         private const string NoUserError = "Username must be present";

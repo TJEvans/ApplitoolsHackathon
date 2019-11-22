@@ -6,6 +6,7 @@ using WebDriverManager.DriverConfigs.Impl;
 
 namespace ApplitoolsHackathonTraditional.testcases
 {
+    [TestFixture]
     public class HackathonTestcase
     {
         /// <summary>

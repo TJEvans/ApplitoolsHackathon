@@ -10,6 +10,7 @@ namespace ApplitoolsHackathonTraditional.testcases
     /// https://applitools.com/hackathon-instructions#chart-test
     /// https://applitools.com/hackathon-instructions#dynamic-content
     /// </summary>
+    [TestFixture]
     public class HomepageTestcase : HackathonTestcase
     {
         /// <summary>

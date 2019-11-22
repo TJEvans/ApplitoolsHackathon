@@ -7,6 +7,7 @@ namespace ApplitoolsHackathonVisionAi.testcases
     /// <summary>
     /// Execute the user workflows described in https://applitools.com/hackathon-instructions#login-page & https://applitools.com/hackathon-instructions#data-driven-test
     /// </summary>
+    [TestFixture]
     public class LoginTestcase : HackathonTestcase
     {
         private const string NoUserError = "Username must be present";
@@ -22,26 +23,25 @@ namespace ApplitoolsHackathonVisionAi.testcases
             //Verify the Login Page
             var loginPage = new LoginPage(But);
             Eyes.CheckWindow("Initial Login Page");
-
+            
             //Verify behavior after logging in 
             Assert.AreEqual(typeof(HomePage), loginPage.Login("jgomez", "password123").GetType(), "Logging in presents the user with the Homepage");
-            Eyes.CheckWindow("Successfully Logged In");
+            Eyes.CheckWindow("jgomez homepage");
         }
 
         /// <summary>
         /// Attempts to Login with no username and verifies the expected error
         /// </summary>
         [Test]
-        public void NoUserNameError()
+        public void NoUsernameError()
         {
             //Verify the Login Page
             var loginPage = new LoginPage(But);
-            Eyes.CheckWindow("Initial Login Page");
-
+            
             //Login without a username
             Assert.Throws<WebDriverTimeoutException>(() => loginPage.Login("", "password123"), "Homepage does not load after unsuccessful login");
             Assert.AreEqual(NoUserError, loginPage.GetAlertMessage(), "Logging in without a user produced the expected error");
-            Eyes.CheckWindow("No Username Error");
+            Eyes.CheckElement(LoginPage.AlertMessage, "No Username Error");
         }
 
         /// <summary>
@@ -52,12 +52,11 @@ namespace ApplitoolsHackathonVisionAi.testcases
         {
             //Verify the Login Page
             var loginPage = new LoginPage(But);
-            Eyes.CheckWindow("Initial Login Page");
-
+            
             //Login without a password
             Assert.Throws<WebDriverTimeoutException>(() => loginPage.Login("jgomez", ""), "Homepage does not load after unsuccessful login");
             Assert.AreEqual(NoPassError, loginPage.GetAlertMessage(), "Logging in without a password produced the expected error");
-            Eyes.CheckWindow("No Password Error");
+            Eyes.CheckElement(LoginPage.AlertMessage, "No Password Error");
         }
 
         /// <summary>
@@ -68,12 +67,11 @@ namespace ApplitoolsHackathonVisionAi.testcases
         {
             //Verify the Login Page
             var loginPage = new LoginPage(But);
-            Eyes.CheckWindow("Initial Login Page");
 
             //Login without a user or password
             Assert.Throws<WebDriverTimeoutException>(() => loginPage.Login("", ""), "Homepage does not load after unsuccessful login");
             Assert.AreEqual(NoUserAndPassError, loginPage.GetAlertMessage(), "Logging in without a user or password produced the expected error");
-            Eyes.CheckWindow("No Username or Password Error");
+            Eyes.CheckElement(LoginPage.AlertMessage, "No Username or Password Error");
         }
     }
 }

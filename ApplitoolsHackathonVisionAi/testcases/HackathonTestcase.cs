@@ -9,6 +9,7 @@ using WebDriverManager.DriverConfigs.Impl;
 
 namespace ApplitoolsHackathonVisionAi.testcases
 {
+    [TestFixture]
     public class HackathonTestcase
     {
         /// <summary>
@@ -40,7 +41,8 @@ namespace ApplitoolsHackathonVisionAi.testcases
             
             // Initialize the eyes SDK (IMPORTANT: make sure your API key is set in the APPLITOOLS_API_KEY env variable).
             Eyes = new Eyes(_runner);
-            
+            Eyes.SaveNewTests = true;
+
             //Open AppliTool's Eyes and start a test based on the method name
             Eyes.Open(But, "Hackathon App", TestContext.CurrentContext.Test.MethodName, new Size(1440,900));
 
@@ -57,9 +59,16 @@ namespace ApplitoolsHackathonVisionAi.testcases
         [TearDown]
         public void Teardown()
         {
+            Eyes?.CloseAsync();
+            But?.Quit();
+            _runner.GetAllTestResults(); //TODO Do something with this?
+        }
+
+        [OneTimeTearDown]
+        public void OneTimeTeardown()
+        {
             But?.Quit();
             Eyes?.AbortIfNotClosed();
-            _runner.GetAllTestResults();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace ApplitoolsHackathonVisionAi.testcases
     /// https://applitools.com/hackathon-instructions#chart-test
     /// https://applitools.com/hackathon-instructions#dynamic-content
     /// </summary>
+    [TestFixture]
     public class HomepageTestcase : HackathonTestcase
     {
         /// <summary>
@@ -21,7 +22,7 @@ namespace ApplitoolsHackathonVisionAi.testcases
         public void RecentTransactionsAmountSorting()
         {
             var homePage = new LoginPage(But).Login("jgomez", "password");
-            Eyes.CheckWindow("Recent Transactions Baseline");
+            Eyes.CheckWindow("jgomez homepage");
             var tableData = homePage.GetRecentTransactions();
             homePage.SortRecentTransactionsByAmount();
             var sortedTableData = homePage.GetRecentTransactions();
@@ -33,7 +34,7 @@ namespace ApplitoolsHackathonVisionAi.testcases
                 tempAmount = transaction.amount;
             }
             Assert.True(true, "Recent Transactions Table is sorted ascending by amount");
-            Eyes.CheckWindow("Recent Transactions Sorted");
+            Eyes.CheckElement(HomePage.TransactionTable, "jgomez homepage transactions sorted by amount");
         }
 
         [Test]
