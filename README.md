@@ -10,7 +10,7 @@ Can be run in Visual Studio using the build in Test Explorer or using dotnet tes
 ## Initial Tests the Traditional Way
 Time it took to develop the traditional test project? 360 minutes
 
-Lines of code written? ~471
+Lines of code written? ~473
 Number of Locators Used was Fourteen
 Seven fields or Labels were copied
 
@@ -20,7 +20,7 @@ Time it took to learn AppliTools? Scanned the Tutorial for 30 minutes for the ba
 
 Time it took to develop the VisionAi test project?  VisualAi Project started as a copy of the Traditional.  Took an hour to get Eyes added and work through API key and Viewport params.  Removing redundant verifications and unused code took an hour.  Interacting with the Eyes UI took a half day to get comfortable going in blind.  Figuring out how to remove Baselines and update them gave me a lot of trouble.
 
-Lines of code written? ~387 Lines
+Lines of code written? ~389 Lines
 Number of Locators Used was Nine
 No Fields or Labels were copied
 
@@ -36,7 +36,7 @@ The traditional version identified the following
   - Recent transactions table amount sort does not work
   - Only One Ad displayed when they are enabled
 
-The traditional version failed to indentify the following bugs, but they were identifed by Eyes
+The traditional version failed to indentify the following bugs, but they were identifiable by Eyes
   - No User error formatted badly
   - Login form display name changed to Lougout
   - Missing Instagram Label on the Login Page
@@ -45,3 +45,4 @@ The traditional version failed to indentify the following bugs, but they were id
 ### Suggested Improvements
   - If a new run of Eyes occurs and there is not an image where there was one in the baseline, we have no way to comment/remark
   - Should be able to do all the same remarking and editing of an image you can do when looking at results as when looking at the baseline directly
+  - False failure seen when the Loans menu of the homepage shifted right by a pixel or two, visual comparisons should be smart enough to filter these out
