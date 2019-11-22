@@ -10,10 +10,6 @@ namespace ApplitoolsHackathonVisionAi.testcases
     [TestFixture]
     public class LoginTestcase : HackathonTestcase
     {
-        private const string NoUserError = "Username must be present";
-        private const string NoPassError = "Password must be present";
-        private const string NoUserAndPassError = "Both Username and Password must be present";
-
         /// <summary>
         /// Attempts to Login with a valid username and password and verifies successful login
         /// </summary>
@@ -43,7 +39,6 @@ namespace ApplitoolsHackathonVisionAi.testcases
             
             //Login without a username
             Assert.Throws<WebDriverTimeoutException>(() => loginPage.Login("", "password123"), "Homepage does not load after unsuccessful login");
-            Assert.AreEqual(NoUserError, loginPage.GetAlertMessage(), "Logging in without a user produced the expected error");
 
             //Was previously only able to confirm the raw text of the Message, but with Eyes I can now validate the look and feel
             Eyes.CheckElement(LoginPage.AlertMessage, "No Username Error");
@@ -60,9 +55,6 @@ namespace ApplitoolsHackathonVisionAi.testcases
             
             //Login without a password
             Assert.Throws<WebDriverTimeoutException>(() => loginPage.Login("jgomez", ""), "Homepage does not load after unsuccessful login");
-            
-            //Assert is catching the error but I want to see what it looks like in Eyes
-            //Assert.AreEqual(NoPassError, loginPage.GetAlertMessage(), "Logging in without a password produced the expected error");
 
             //Was previously only able to confirm the raw text of the Message, but with Eyes I can now validate the look and feel
             Eyes.CheckElement(LoginPage.AlertMessage, "No Password Error");
@@ -79,9 +71,6 @@ namespace ApplitoolsHackathonVisionAi.testcases
 
             //Login without a user or password
             Assert.Throws<WebDriverTimeoutException>(() => loginPage.Login("", ""), "Homepage does not load after unsuccessful login");
-
-            //Assert is catching the error but I want to see what it looks like in Eyes
-            //Assert.AreEqual(NoUserAndPassError, loginPage.GetAlertMessage(), "Logging in without a user or password produced the expected error");
 
             //Was previously only able to confirm the raw text of the Message, but with Eyes I can now validate the look and feel
             Eyes.CheckElement(LoginPage.AlertMessage, "No Username or Password Error");

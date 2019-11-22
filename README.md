@@ -10,21 +10,19 @@ Can be run in Visual Studio using the build in Test Explorer or using dotnet tes
 ## Initial Tests the Traditional Way
 Time it took to develop the traditional test project? 360 minutes
 
-Lines of code written ~485
-
+Lines of code written? ~471
 Number of Locators Used was Fourteen
-
-Number of field labels or test displayed in the app I need to copy? Seven, Three for the error strings & Four for populating xPaths
+Seven fields or Labels were copied
 
 
 ## Initial Tests using Vision AI
 Time it took to learn AppliTools? Scanned the Tutorial for 30 minutes for the basics then dove right in
 
-Time it took to develop the VisionAi test project?  Took an hour to get Eyes added and work through API key and Viewport params.  Interacting with the Eyes UI took a half day to get comfortable going in blind.  Figuring out how to remove Baselines and update them gave me a lot of trouble.
+Time it took to develop the VisionAi test project?  VisualAi Project started as a copy of the Traditional.  Took an hour to get Eyes added and work through API key and Viewport params.  Removing redundant verifications and unused code took an hour.  Interacting with the Eyes UI took a half day to get comfortable going in blind.  Figuring out how to remove Baselines and update them gave me a lot of trouble.
 
-Lines of code written? ~60 lines of code was added to utilize AppliTools Eyes, but was able to remove various Asserts from the Traditional version
-
-Number of locators, and copied fields was not changed, but I can see how various Visual AI verificiations would allow me to reduce the amount of code
+Lines of code written? ~387 Lines
+Number of Locators Used was Nine
+No Fields or Labels were copied
 
 
 ## Updates for Client Version v2

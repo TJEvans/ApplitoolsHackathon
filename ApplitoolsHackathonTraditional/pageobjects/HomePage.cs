@@ -26,7 +26,6 @@ namespace ApplitoolsHackathonTraditional.pageobjects
         private static By TransactionTableDateHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableDateHeaderLocator}");
         private static By TransactionTableDescriptionHeader = By.CssSelector($"{TransactionTableLocator} {TransactionTableDescriptionHeaderLocator}");
         private static By TransactionTableRow = By.CssSelector($"{TransactionTableLocator} > tbody > tr");
-        private static By GetTransactionTableRow(int index) => By.CssSelector($"{TransactionTableLocator} > tbody > tr:nth-child({index + 1}");
         private static By GetTransactionTableRowCell(int rowIndex, int colIndex) => By.CssSelector($"{TransactionTableLocator} > tbody > tr:nth-child({rowIndex + 1}) > td:nth-child({colIndex + 1})");
 
         private const string AdLocator = "div[id*=\"flashSale\"] > img[src*=\"gif\"]";

@@ -25,6 +25,9 @@ namespace ApplitoolsHackathonVisionAi.pageobjects
             });
         }
 
+        /// <summary>
+        /// Click the Button to add more data
+        /// </summary>
         public void AddAnotherYearOfData()
         {
             _but.FindElement(addAnotherYearsDataButton).Click();

@@ -22,7 +22,7 @@ namespace ApplitoolsHackathonVisionAi.testcases
         //AppliTools Eyes Object
         protected Eyes Eyes;
         
-        //ApplitToole Eyes Runner
+        //ApplitTools Eyes Runner
         private EyesRunner _runner;
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace ApplitoolsHackathonVisionAi.testcases
             Eyes.BranchName = "v2";
             
             //Open AppliTool's Eyes and start a test based on the method name
-            Eyes.Open(But, "AppliToolsHackathon", TestContext.CurrentContext.Test.MethodName, new Size(1440,900));
+            Eyes.Open(But, "VisualAiRockstar", TestContext.CurrentContext.Test.MethodName, new Size(1440,900));
 
             //Utilize the Batching Feature to group tests by their Class
             Eyes.Batch.Name = TestContext.CurrentContext.Test.ClassName;

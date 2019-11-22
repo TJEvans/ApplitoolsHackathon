@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using ApplitoolsHackathonVisionAi.pageobjects;
+﻿using ApplitoolsHackathonVisionAi.pageobjects;
 using NUnit.Framework;
 
 namespace ApplitoolsHackathonVisionAi.testcases
@@ -23,21 +21,11 @@ namespace ApplitoolsHackathonVisionAi.testcases
         public void RecentTransactionsAmountSorting()
         {
             var homePage = new LoginPage(But).Login("jgomez", "password");
-            var tableData = homePage.GetRecentTransactions();
-            homePage.SortRecentTransactionsByAmount();
-            var sortedTableData = homePage.GetRecentTransactions();
-            Assert.AreEqual(tableData.Count, sortedTableData.Count(transaction => tableData.Contains(transaction)), "Verify all transaction data remains the same after Sorting");
-            
-            //Assert is catching the Error, but I want to see what it looks like when Eyes catches it
-            //var tempAmount = decimal.MinValue;
-            //foreach (var transaction in sortedTableData)
-            //{
-            //    if(tempAmount > transaction.amount) Assert.True(false, "Recent Transactions Table is NOT sorted ascending by amount");
-            //    tempAmount = transaction.amount;
-            //}
-            //Assert.True(true, "Recent Transactions Table is sorted ascending by amount");
 
-            //For the raw data validation of sorting I would maintain the existing verification, but there may be other elements of the UI Visual validation may be useful for
+            //Sort Table of Transactions by Amount
+            homePage.SortRecentTransactionsByAmount();
+
+            //Check the Table after Sorting
             Eyes.CheckElement(HomePage.TransactionTable, "jgomez homepage transactions sorted by amount");
         }
 
@@ -56,6 +44,7 @@ namespace ApplitoolsHackathonVisionAi.testcases
             //Visually compare the Expense Chart, this is great solution to validating canvas's when you control the test data
             Eyes.CheckElement(ChartPage.chartCanvas, "Default Expense Chart");
             
+            //Add more data to the chart
             chartPage.AddAnotherYearOfData();
             
             //Visually compare the Expense Chart, this is great solution to validating canvas's when you control the test data
@@ -70,9 +59,6 @@ namespace ApplitoolsHackathonVisionAi.testcases
         {
             var homePage = LoginPage.NavigateToPage(But, true).Login("jgomez", "password");
             
-            //Assert is catching the error, but I want to see what its like when Eyes catches it
-            //Assert.AreEqual(2, homePage.GetNumberOfAds(), "Verify Two Flash Sales are displayed when enabled");
-
             //If our goal is to validate only the existence of two Gif Ads the above validation is recommended
             //Adding Visual checks though allow us to confirm there are no unintended consequences in other portions of the UI when enabling Ads
             Eyes.CheckWindow("Homepage with Ads");

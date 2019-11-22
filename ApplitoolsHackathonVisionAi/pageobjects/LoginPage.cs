@@ -11,12 +11,9 @@ namespace ApplitoolsHackathonVisionAi.pageobjects
     public class LoginPage : WebPage
     {
         public static readonly By AlertMessage = By.CssSelector("div.alert-warning");
-
-        //The biggest advantage xPath has over css is inner text locators, but it makes globalization much harder
-        public static readonly By UsernameField = By.XPath("//label[.='Username']/../input");
-        public static readonly By PasswordField = By.XPath("//label[.='Pwd']/../input");
-        public static readonly By LoginButton = By.XPath("//button[.='Log In']");
-        public static readonly By RememberMeCheckBox = By.XPath("//label[.='Remember Me']/input");
+        public static readonly By UsernameField = By.CssSelector("input#username");
+        public static readonly By PasswordField = By.CssSelector("input#password");
+        public static readonly By LoginButton = By.CssSelector("button#log-in");
 
         /// <summary>
         /// Navigate to the applications Login Page
@@ -40,7 +37,6 @@ namespace ApplitoolsHackathonVisionAi.pageobjects
                 browser.FindElement(UsernameField);
                 browser.FindElement(PasswordField);
                 browser.FindElement(LoginButton);
-                browser.FindElement(RememberMeCheckBox);
                 return true;
             });
         }
@@ -85,43 +81,6 @@ namespace ApplitoolsHackathonVisionAi.pageobjects
         public void ClickLogin()
         {
             _but.FindElement(LoginButton).Click();
-        }
-
-        /// <summary>
-        /// Click on the Remember Me checkbox
-        /// </summary>
-        /// <param name="enabled">The desired state of the Remember Me checkbox</param>
-        public void SetRememberMe(bool enabled)
-        {
-            if (_but.FindElement(RememberMeCheckBox).GetAttribute("checked")
-                .Equals(enabled.ToString(), StringComparison.OrdinalIgnoreCase)) return;
-            _but.FindElement(RememberMeCheckBox).Click();
-        }
-
-        /// <summary>
-        /// Determines whether a warning message is displayed to the user
-        /// </summary>
-        /// <returns>True if a warning is displayed on the page</returns>
-        public bool IsAlertPresent()
-        {
-            try
-            {
-                _but.FindElement(AlertMessage);
-                return true;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Reads the alert message
-        /// </summary>
-        /// <returns>The string representing the warning message displayed to the user</returns>
-        public string GetAlertMessage()
-        {
-            return !IsAlertPresent() ? "" : _but.FindElement(AlertMessage).Text.Trim();
         }
     }
 }
