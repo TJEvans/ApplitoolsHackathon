@@ -12,7 +12,7 @@ namespace ApplitoolsHackathonTraditional.testcases
     {
         private const string NoUserError = "Username must be present";
         private const string NoPassError = "Password must be present";
-        private const string NoUserAndPassError = "Both Username and Password must be present";
+        private const string NoUserAndPassError = "Please enter both username and password";
 
         /// <summary>
         /// Attempts to Login with a valid username and password and verifies successful login

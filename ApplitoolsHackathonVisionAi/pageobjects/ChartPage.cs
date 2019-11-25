@@ -4,7 +4,6 @@ using OpenQA.Selenium.Support.UI;
 
 namespace ApplitoolsHackathonVisionAi.pageobjects
 {
-
     /// <summary>
     /// Object representing the applications chart page allowing for common user interactions
     /// </summary>

@@ -1,4 +1,5 @@
 ﻿using System;
+using ApplitoolsHackathonVisionAi.testcases;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -22,7 +23,7 @@ namespace ApplitoolsHackathonVisionAi.pageobjects
         /// <returns>Object representing the Login Page on successful navigation</returns>
         public static LoginPage NavigateToPage(IWebDriver driver, bool enableAds = false)
         {
-            var sUrl = "https://demo.applitools.com/hackathon.html";
+            var sUrl = HackathonTestcase.BaseUrl;
             if (enableAds) sUrl += "?showAd=true";
             driver.Url = sUrl;
             return new LoginPage(driver);

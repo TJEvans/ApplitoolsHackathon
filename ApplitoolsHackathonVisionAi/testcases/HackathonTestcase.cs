@@ -12,6 +12,8 @@ namespace ApplitoolsHackathonVisionAi.testcases
     [TestFixture]
     public class HackathonTestcase
     {
+        public const string BaseUrl = "https://demo.applitools.com/hackathonV2.html";
+
         /// <summary>
         ///     The Browser Under Test
         /// </summary>
@@ -42,7 +44,8 @@ namespace ApplitoolsHackathonVisionAi.testcases
             // Initialize the eyes SDK (IMPORTANT: make sure your API key is set in the APPLITOOLS_API_KEY env variable).
             Eyes = new Eyes(_runner);
             Eyes.SaveNewTests = true;
-
+            Eyes.BranchName = "v2";
+            
             //Open AppliTool's Eyes and start a test based on the method name
             Eyes.Open(But, "VisualAiRockstar", TestContext.CurrentContext.Test.MethodName, new Size(1440,900));
 
@@ -50,7 +53,7 @@ namespace ApplitoolsHackathonVisionAi.testcases
             Eyes.Batch.Name = TestContext.CurrentContext.Test.ClassName;
 
             // Navigate to the end desired Url
-            But.Url = "https://demo.applitools.com/hackathon.html";
+            But.Url = BaseUrl;
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace ApplitoolsHackathonTraditional.pageobjects
 
         private const string AdLocator = "div[id*=\"flashSale\"] > img[src*=\"gif\"]";
         private static By Ad = By.CssSelector(AdLocator);
-
+        
         /// <summary>
         /// 
         /// </summary>
